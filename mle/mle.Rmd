@@ -1,0 +1,151 @@
+---
+name: ""
+surname: "Gabriel Mello Silva"
+position: "Machine Learning Engineer"
+address: "São Paulo, Brazil"
+www: "gabriel-msilva.github.io"
+email: "gabriel.zyx@gmail.com"
+github: "gabriel-msilva"
+linkedin: "gabriel-mello-silva"
+date: "`r format(Sys.time(), '%B %Y')`"
+headcolor: "0a75ad"
+output: 
+  vitae::awesomecv:
+    page_total: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+library(vitae)
+library(dplyr)
+library(readr)
+library(lubridate)
+```
+
+# About me
+
+  * Experience in **building and deploying** Machine Learning models and data visualizations.
+  * Passionate about **teaching** and highly value **efficient communication and organization** between teammates. 
+
+# Experience
+
+```{r experience}
+experience <- read_csv("../data/experience.csv")
+activities <- read_csv("../data/experience-activities.csv")
+employers <- read_csv("../data/employers.csv")
+
+format_ym <- function(.date) {
+  if_else(
+    is.na(.date), 
+    "current",
+    paste(year(.date), month(.date, label = TRUE))
+  )
+}
+
+experience %>% 
+  mutate(begin = lubridate::ym(begin), end = lubridate::ym(end)) %>% 
+  left_join(activities, by = "job_id") %>% 
+  left_join(employers, by = "employer_id") %>% 
+  arrange(desc(begin)) %>% 
+  detailed_entries(
+    what = job_title,
+    when = glue::glue("{format_ym(begin)} - {format_ym(end)}"),
+    with = employer,
+    where = glue::glue("{city}, {country}"),
+    why = activities
+  )
+```
+
+# Personal projects
+
+```{r personal-projects}
+projects <- tribble(
+  ~ title, ~year, ~ description, ~url,
+  "melloc", 2022, glue::glue("Personal blog about (Data) Science (website at \\url{gabriel-msilva.github.io})", .open = "<", .close = ">"), NA_character_,
+  "fractal-sets", 2022, "Optimized functions to plot Mandelbrot and quadratic Julia sets", NA_character_,
+  "covid-19", 2021, "Data analysis report of early COVID-19 data", NA_character_,
+  "relevant-facts", 2020, "Data Science project about relevant facts for insider trading identification", NA_character_,
+  "Where is the data scientist?", 2019, "Entry for \\textit{2018 Kaggle Machine Learning \\& Data Science Survey}",  "www.kaggle.com/code/gabrielmsilva/where-is-the-data-scientist"
+) %>%
+  mutate(url = if_else(is.na(url), glue::glue("github.com/gabriel-msilva/{title}"), url))
+
+projects %>% 
+  brief_entries(
+    what = glue::glue("\\textbf{<title>}: <description> \\newline \\url{<url>}", .open = "<", .close = ">"), 
+    when = year, 
+    .protect = FALSE
+  )
+```
+
+# Education
+
+```{r education}
+education <- read_csv("../data/education.csv")
+institutions <- read_csv("../data/education-institutions.csv")
+
+write_abbreviation <- function(.abbrv) {
+  if_else(
+    !is.na(.abbrv),
+    glue::glue("({.abbrv})"),
+    ""
+  )
+}
+
+education %>% 
+  left_join(institutions, by = "institution_id") %>% 
+  detailed_entries(
+    what = glue::glue("{degree} in {area}"),
+    when = glue::glue("{begin} - {end}"),
+    with = glue::glue("{name} {write_abbreviation(abbreviation)}"),
+    where = glue::glue("{city}, {country}")
+  )
+```
+
+# Courses
+
+```{r courses}
+courses <- read_csv("../data/courses.csv") %>% 
+  mutate(end = lubridate::ym(end))
+
+courses %>% 
+  arrange(desc(end)) %>% 
+  detailed_entries(
+    what = course_name,
+    when = glue::glue("{format_ym(end)}"),
+    with = institution
+  )
+```
+
+# Skills
+
+```{r skills}
+tribble(
+  ~ skill, ~ contents,
+  "Programming languages", "Python, R, C#, SQL, Spark, Bash",
+  "Software development", "source control (Git), CI/CD (GoCD, Jenkins), unit test, Python packages (PIP/Conda), documentation websites",
+  "Cloud computing", "AWS, Docker, Kubernetes",
+  "Communication", "presentations, data visualization, data analysis reports, dashboard design"
+) %>% 
+  detailed_entries(what = contents, with = skill)
+```
+
+# Languages
+
+```{r languages}
+tribble(
+  ~ language, ~ level,
+  "Portuguese \\hspace{12 mm}  English \\hspace{13 mm}Spanish", 
+  "Native \\hspace{23 mm} Fluent \\hspace{15.5 mm} Advanced",
+) %>% 
+  detailed_entries(what = level, with = language, .protect = FALSE)
+```
+
+# Publications
+
+Publications available for download at [www.researchgate.net/profile/Gabriel-Mello-Silva](www.researchgate.net/profile/Gabriel-Mello-Silva).
+
+```{r publications}
+bibliography_entries("congress.bib") %>%
+  arrange(desc(author$family), issued)
+```
+

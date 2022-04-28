@@ -1,0 +1,7 @@
+job_id,begin,end,job_title,employer_id
+2,2015-02,2015-07,Professor,2
+3,2018-01,2018-06,Acoustical Consultant,3
+4,2019-01,2020-07,Data Scientist,4
+5,2020-07,2021-10,Data Scientist,5
+6,2021-10,2022-04,Machine Learning Engineer,5
+7,2022-04,,Senior Machine Learning Engineer,5

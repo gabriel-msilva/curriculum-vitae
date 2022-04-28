@@ -1,0 +1,20 @@
+job_id,activities
+2,Physics and Calculus classes
+3,"Acoustical and noise control design of theaters, auditoriums and classrooms"
+3,Build Room Acoustics models and simulations
+3,Measure and analyze acoustical parameters (according to ISO 3382)
+4,Implement and automate rules for Compliance on Market Trading
+4,"Build statistical models (supervised and unsupervised learning), e.g. linear regression, decision tree algorithms, natural language processing (NLP)"
+4,Communicate exploratory analysis and insights to non-technical analysts and managers
+4,Develop interactive dashboards and promote data-driven decisions
+4,Create and optimize ETL processes of local and external data
+5,"Build Statistical and Machine Learning models and optimizations (e.g. churn prediction, optimized budget allocation)"
+5,Communicate statistical analysis and insights to coworkers and stakeholder
+5,Develop tools and algorithms for Data Science lifecycle
+5,Integrate and serve solutions in the cloud
+5,Collaborate with coworkers into developing processes and good practices
+6,"Create and implement processes, tools and infrastructure for Data Science team."
+6,Define CI/CD workflow and automate pipelines for Machine Learning models in production
+6,"Help monitor models through statistical metrics, data drift, and concept drift"
+6,Develop Feature Store and internal Python package for Data Science
+6,"Promote good coding practices, project standards, documentation and versioning"

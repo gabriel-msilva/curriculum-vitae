@@ -1,0 +1,9 @@
+*.log
+awesome-cv.cls
+mle/fonts
+mle/media
+
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
