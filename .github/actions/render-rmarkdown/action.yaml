@@ -1,0 +1,33 @@
+name: render-rmarkdown
+description: Restore renv and render Rmarkdown file
+
+inputs:
+  file:
+    description: Path to .Rmd file
+    required: true
+  
+runs:
+  using: composite
+  steps:
+    - name: Install pandoc
+      run: |
+        DEB="pandoc-3.0-1-amd64.deb"
+        curl -L \
+          https://github.com/jgm/pandoc/releases/download/3.0/$DEB \
+          -o $DEB
+        
+        sudo dpkg -i $DEB
+        rm $DEB
+      shell: bash
+
+    - name: Setup renv
+      uses: r-lib/actions/setup-renv@v2
+        
+    - name: Setup tinytex
+      uses: r-lib/actions/setup-tinytex@v2
+    
+    - name: Render file
+      env:
+        LANG: en_US.UTF8  # https://github.com/jgm/pandoc/issues/2838
+      run: rmarkdown::render("${{ inputs.file }}")
+      shell: Rscript {0}

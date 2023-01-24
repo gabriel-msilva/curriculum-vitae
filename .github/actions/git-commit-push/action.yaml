@@ -1,0 +1,33 @@
+name: git-commit-push
+description: Commit files and push to remote repository
+
+inputs:
+  files:
+    description: Files to stage
+    default: --all
+
+runs:
+  using: composite
+  steps:
+    - name: Configure Git
+      run: |
+        git config --global user.name "GitHub Actions"
+        git config --global user.email "noreply@github.com"
+      shell: bash
+
+    - name: Check changes
+      id: check
+      run: |
+        lines=`git diff --name-only | wc -l`
+        if [ $lines -gt 0 ]; then changed="true"; else changed="false"; fi
+        echo "changed=$changed" >> $GITHUB_OUTPUT
+      shell: bash
+      
+    - name: Commit and push changes
+      if: steps.check.outputs.changed
+      run: |
+        SHA=${{ github.sha }}
+        git add ${{ inputs.files }}
+        git commit -m "CI: Update PDF (${{ github.run_number }} - ${SHA:0:7})"
+        git push origin
+      shell: bash
