@@ -61,7 +61,7 @@ experience %>%
 ```{r personal-projects}
 projects <- tribble(
   ~ title, ~year, ~ description, ~url,
-  "melloc", 2022, glue::glue("Personal blog about (Data) Science (website at \\url{gabriel-msilva.github.io})", .open = "<", .close = ">"), NA_character_,
+  "melloc", 2022, glue::glue("Personal blog about (Data) Science (website at \\url{gabriel-msilva.github.io/melloc})", .open = "<", .close = ">"), NA_character_,
   "fractal-sets", 2022, "Optimized functions to plot Mandelbrot and quadratic Julia sets", NA_character_,
   "covid-19", 2021, "Data analysis report of early COVID-19 data", NA_character_,
   "relevant-facts", 2020, "Data Science project about relevant facts for insider trading identification", NA_character_,
