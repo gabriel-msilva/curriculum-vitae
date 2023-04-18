@@ -122,7 +122,7 @@ courses %>%
 tribble(
   ~ skill, ~ contents,
   "Programming languages", "Python, R, C#, SQL, Spark, Bash",
-  "Software development", "source control (Git), CI/CD (GoCD, Jenkins), unit test, Python packages (PIP/Conda), documentation websites",
+  "Software development", "source control (Git), CI/CD (GitHub Actions, GoCD, Jenkins), unit tests, Python packaging (PIP/Conda), documentation websites",
   "Cloud computing", "AWS, Docker, Kubernetes",
   "Communication", "presentations, data visualization, data analysis reports, dashboard design"
 ) %>% 
