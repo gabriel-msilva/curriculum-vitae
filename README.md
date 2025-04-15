@@ -25,5 +25,5 @@ tinytex::install_tinytex()
 To render `.Rmd` files (or use RStudio IDE):
 
 ```R
-rmarkdown::render("/ath/to/file.Rmd")
+rmarkdown::render("/path/to/file.Rmd")
 ```
