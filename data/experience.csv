@@ -4,4 +4,5 @@ job_id,begin,end,job_title,employer_id
 4,2019-01,2020-07,Data Scientist,4
 5,2020-07,2021-10,Data Scientist,5
 6,2021-10,2022-04,Machine Learning Engineer,5
-7,2022-04,,Senior Machine Learning Engineer,5
+7,2022-04,2024-12,Senior Machine Learning Engineer,5
+8,2024-01,,Senior Machine Learning Engineer,6
