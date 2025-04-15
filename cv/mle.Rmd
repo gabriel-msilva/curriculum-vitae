@@ -43,6 +43,7 @@ format_ym <- function(.date) {
 }
 
 experience %>% 
+  filter(job_id > 3) %>%
   mutate(begin = lubridate::ym(begin), end = lubridate::ym(end)) %>% 
   left_join(activities, by = "job_id") %>% 
   left_join(employers, by = "employer_id") %>% 
