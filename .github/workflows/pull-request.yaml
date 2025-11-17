@@ -1,12 +1,10 @@
-name: Update CV
+name: Render CV
 
 on:
   push:
     branches:
-      - main
-    paths-ignore:
-      - README.md
-      - "**.pdf"
+      - "**"
+      - "!main"
 
 jobs:
   render-push:
@@ -21,8 +19,3 @@ jobs:
         uses: ./.github/actions/render-rmarkdown
         with:
           file: cv/mle.Rmd
-      
-      - name: Commit and push PDF file
-        uses: ./.github/actions/git-commit-push
-        with:
-          files: cv/mle.pdf
