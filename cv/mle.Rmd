@@ -3,7 +3,7 @@ name: ""
 surname: "Gabriel Mello Silva"
 position: "Machine Learning Engineer"
 address: "São Paulo, Brazil"
-www: "gabriel-msilva.github.io"
+www: "gabriel-msilva.github.io/melloc"
 email: "gabriel.zyx@gmail.com"
 github: "gabriel-msilva"
 linkedin: "gabriel-mello-silva"
@@ -24,8 +24,8 @@ library(lubridate)
 
 # About me
 
-  * Experience in **building and deploying** Machine Learning models and data visualizations.
-  * Passionate about **teaching** and highly value **efficient communication and organization** between teammates. 
+* Experience in **building and deploying** Machine Learning tools, models and data visualizations.
+* Passionate about **teaching** and highly value **efficient communication and organization** between teams.
 
 # Experience
 
@@ -62,6 +62,7 @@ experience %>%
 ```{r personal-projects}
 projects <- tribble(
   ~ title, ~year, ~ description, ~url,
+  "streamlit-arborist", 2025, "Open-source Streamlit component for visualizing interactive tree views.", NA_character_,
   "melloc", 2022, glue::glue("Personal blog about (Data) Science (website at \\url{gabriel-msilva.github.io/melloc})", .open = "<", .close = ">"), NA_character_,
   "fractal-sets", 2022, "Optimized functions to plot Mandelbrot and quadratic Julia sets", NA_character_,
   "covid-19", 2021, "Data analysis report of early COVID-19 data", NA_character_,
@@ -78,6 +79,8 @@ projects %>%
   )
 ```
 
+\newpage
+
 # Education
 
 ```{r education}
@@ -85,11 +88,7 @@ education <- read_csv("../data/education.csv")
 institutions <- read_csv("../data/education-institutions.csv")
 
 write_abbreviation <- function(.abbrv) {
-  if_else(
-    !is.na(.abbrv),
-    glue::glue("({.abbrv})"),
-    ""
-  )
+  if_else(!is.na(.abbrv), glue::glue("({.abbrv})"), "")
 }
 
 education %>% 
@@ -102,7 +101,7 @@ education %>%
   )
 ```
 
-# Courses
+# Courses and certificates
 
 ```{r courses}
 courses <- read_csv("../data/courses.csv") %>% 
@@ -122,8 +121,8 @@ courses %>%
 ```{r skills}
 tribble(
   ~ skill, ~ contents,
-  "Programming languages", "Python, R, C#, SQL, Spark, Bash",
-  "Software development", "source control (Git), CI/CD (GitHub Actions, GoCD, Jenkins), unit tests, Python packaging (PIP/Conda), documentation websites",
+  "Programming languages", "Python, R, Scala, Bash, SQL, Spark",
+  "Software development", "source control (Git), CI/CD (GitHub Actions, GoCD, Jenkins), unit tests, Python packaging (pip/Conda/uv), documentation websites",
   "Cloud computing", "AWS, Docker, Kubernetes",
   "Communication", "presentations, data visualization, data analysis reports, dashboard design"
 ) %>% 
