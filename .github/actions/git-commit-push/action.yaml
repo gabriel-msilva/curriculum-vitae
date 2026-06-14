@@ -22,7 +22,7 @@ runs:
         if [ $lines -gt 0 ]; then changed="true"; else changed="false"; fi
         echo "changed=$changed" >> $GITHUB_OUTPUT
       shell: bash
-      
+
     - name: Commit and push changes
       if: steps.check.outputs.changed
       run: |

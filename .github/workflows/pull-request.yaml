@@ -7,7 +7,7 @@ on:
       - "!main"
 
 jobs:
-  render-push:
+  render:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -15,7 +15,7 @@ jobs:
         with:
           lfs: true
 
-      - name: Render Rmarkdown
-        uses: ./.github/actions/render-rmarkdown
+      - name: Render CV
+        uses: ./.github/actions/test-and-render
         with:
           file: cv/mle.Rmd
