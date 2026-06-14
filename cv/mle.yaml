@@ -1,0 +1,197 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/rendercv/rendercv/refs/tags/v2.8/schema.json
+cv:
+  name: Gabriel Mello Silva
+  headline: Machine Learning Engineer
+  location: Sao Paulo, Brazil
+  email: msilva-gabriel@proton.me
+  website: https://gabriel-msilva.github.io/melloc
+  social_networks:
+    - network: LinkedIn
+      username: gabriel-mello-silva
+    - network: GitHub
+      username: gabriel-msilva
+  sections:
+    about_me:
+      - Engineer focused on building Machine Learning tooling and production workflows
+        for fast insights, scalable model development, and reliable deployment.
+    experience:
+      - company: Nubank
+        position: Senior Machine Learning Engineer
+        start_date: 2024-01
+        end_date: present
+        location: Sao Paulo, Brazil
+        highlights:
+          - Maintain and evolve tooling, frameworks, and architecture used by data scientists and analysts in the Lending domain.
+          - Lead roadmap planning for internal libraries, improving performance, API consistency, documentation, and developer usability.
+          - Deploy and integrate real-time ML models into production using scalable internal platforms.
+          - Mentor team members on design principles, software best practices, and architecture.
+      - company: Neon
+        position: Senior Machine Learning Engineer
+        start_date: 2022-04
+        end_date: 2024-12
+        location: Sao Paulo, Brazil
+        highlights:
+          - Designed and deployed CI/CD pipelines for modeling workflows and automated ML releases.
+          - Created a feature store and an internal Python package adopted by data scientists for data preparation and modeling tasks.
+          - Defined standards for project structure, versioning, reproducibility, and documentation.
+          - Worked closely with users to gather feedback and refine APIs for clarity, composability, and ease of use.
+      - company: Neon
+        position: Machine Learning Engineer
+        start_date: 2021-10
+        end_date: 2022-04
+        location: Sao Paulo, Brazil
+      - company: Neon
+        position: Data Scientist
+        start_date: 2020-07
+        end_date: 2021-10
+        location: Sao Paulo, Brazil
+        highlights:
+          - Developed ML and statistical models (for example churn prediction and budget allocation optimization).
+          - Performed exploratory analysis, feature engineering, visualization, and presentation of insights.
+          - Automated data science workflows and implemented tools to standardize model development.
+      - company: Banco Safra
+        position: Data Scientist
+        start_date: 2019-01
+        end_date: 2020-07
+        location: Sao Paulo, Brazil
+        highlights:
+          - Built supervised and unsupervised models for compliance in market trading, including NLP and anomaly detection.
+          - Implemented automated analytical pipelines and interactive dashboards for analysis and monitoring.
+          - Conducted statistical studies and supported data-driven decision making.
+      # - company: Sono Arquitectura
+      #   position: Acoustical Consultant
+      #   start_date: 2018-01
+      #   end_date: 2018-06
+      #   location: Quito, Ecuador
+      #   highlights:
+      #     - Acoustical and noise-control design of theaters, auditoriums, and classrooms.
+      #     - Built room acoustics models and simulations.
+      #     - Measured and analyzed acoustical parameters according to ISO 3382.
+      # - company: Universidade Sao Francisco (USF)
+      #   position: Professor
+      #   start_date: 2015-02
+      #   end_date: 2015-07
+      #   location: Itatiba, Brazil
+      #   highlights:
+      #     - Physics and calculus classes.
+
+    education:
+      - institution: University of Campinas (UNICAMP)
+        area: Acoustics
+        degree: MS
+        start_date: 2015
+        end_date: 2017
+        location: Campinas, Brazil
+      - institution: University of Campinas (UNICAMP)
+        area: Physics (Licentiate)
+        degree: BS
+        start_date: 2013
+        end_date: 2017
+        location: Campinas, Brazil
+      - institution: University of Campinas (UNICAMP)
+        area: Physics (Bachelor)
+        degree: BS
+        start_date: 2009
+        end_date: 2013
+        location: Campinas, Brazil
+
+    personal_projects:
+      - name: richer-prompt
+        date: 2026
+        summary: |
+          Open-source Python package that provides interactive terminal prompts.
+          [github.com/gabriel-msilva/richer-prompt](https://github.com/gabriel-msilva/richer-prompt)
+      - name: streamlit-arborist
+        date: 2025
+        summary: |
+          Open-source Streamlit component for visualizing interactive tree views.
+          [github.com/gabriel-msilva/streamlit-arborist](https://github.com/gabriel-msilva/streamlit-arborist)
+      - name: melloc
+        start_date: 2022
+        summary: |
+          My technical blog about Data Science and Software Development.
+          [gabriel-msilva.github.io/melloc](https://gabriel-msilva.github.io/melloc)
+      # - name: fractal-sets
+      #   date: 2022
+      #   summary: |
+      #     Optimized functions to plot Mandelbrot and quadratic Julia sets.
+      #     [github.com/gabriel-msilva/fractal-sets](https://github.com/gabriel-msilva/fractal-sets)
+      # - name: covid-19
+      #   date: 2021
+      #   summary: |
+      #     Exploratory analysis of COVID-19 data from Johns Hopkins University Center.
+      #     [github.com/gabriel-msilva/covid-19](https://github.com/gabriel-msilva/covid-19)
+      - name: relevant-facts
+        date: 2020
+        summary: |
+          Machine Learning model for insider trading identification using financial relevant facts.
+          [github.com/gabriel-msilva/relevant-facts](https://github.com/gabriel-msilva/relevant-facts)
+      # - name: Where is the data scientist?
+      #   date: 2019
+      #   summary: |
+      #     Entry for *2018 Kaggle Machine Learning & Data Science Survey*.
+      #     [kaggle.com/code/gabrielmsilva/where-is-the-data-scientist](https://www.kaggle.com/code/gabrielmsilva/where-is-the-data-scientist)
+
+    # courses_and_certificates:
+    #   - label: 2025-10
+    #     details: Python Brasil 2025 - Python Brasil
+    #   - label: 2021-12
+    #     details: Introduction to Machine Learning in Production - Coursera | DeepLearning.AI
+    #   - label: 2021-07
+    #     details: Clean Code - Udemy | Academind
+    #   - label: 2018-10
+    #     details: Machine Learning - Coursera | Stanford University
+    #   - label: 2018-07
+    #     details: R Programmer - DataCamp
+    #   - label: 2018-06
+    #     details: Data Scientist with R - DataCamp
+    #   - label: 2017-09
+    #     details: Data Analyst with R - DataCamp
+
+    skills:
+      - name: Software Development
+        summary: "`Python`, `R`, `Scala`, `Bash`, `SQL`, `Spark`"
+        highlights:
+          - API design, internal libraries, environment & packaging, versioning, semantic releases
+          - Unit testing, CI/CD pipelines (GitHub Actions, GoCD, Jenkins)
+          - Documentation (Sphinx, MkDocs), template repositories, CLI tooling
+      - name: Data Science & Machine Learning
+        summary: "`scikit-learn`, `XGBoost`, `LightGBM`, `TensorFlow`, `PyTorch`"
+        highlights:
+          - Data analysis, visualization, and presentation of insights
+          - Feature engineering, model development, evaluation, and deployment
+          - Model monitoring, performance optimization, real-time and batch workflows in production
+      - name: Cloud computing
+        summary: "`Docker`, `Kubernetes`, `AWS` (EC2, S3, ECR, SageMaker)"
+        highlights:
+          - Deploying and integrating ML models into production using cloud platforms
+          - Building and maintaining data pipelines and infrastructure for ML workloads
+      - name: Communication & Teaching
+        highlights:
+          - Documentation, technical writing, and presentation of technical concepts to diverse audiences
+          - Mentoring and knowledge sharing on design principles, software best practices, and architecture
+
+    languages:
+      - "**English** (Fluent) | **Portuguese** (Native) | **Spanish** (Advanced)"
+
+design:
+  theme: classic
+
+locale:
+  language: english
+
+settings:
+  current_date: today
+  render_command:
+    output_folder: rendercv_output
+    design:
+    locale:
+    typst_path: mle.typ
+    pdf_path: mle.pdf
+    dont_generate_markdown: true
+    dont_generate_html: true
+    dont_generate_typst: false
+    dont_generate_pdf: false
+    dont_generate_png: true
+  bold_keywords: []
+  pdf_title: NAME - CV

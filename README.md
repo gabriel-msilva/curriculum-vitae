@@ -1,29 +1,29 @@
 # Curriculum Vitae
 
-Programmatically generated CV using [`vitae`](https://pkg.mitchelloharawild.com/vitae/).
+Programmatically generated *curriculum vitae* using [RenderCV](https://docs.rendercv.com/).
 
-- [Machine Learning Engineer](https://github.com/gabriel-msilva/curriculum-vitae/blob/main/cv/mle.pdf)
+- [Machine Learning Engineer](./cv/mle.pdf)
 
 
 ## Development
 
-[Install `pandoc`](https://pandoc.org/installing.html):
+1. Install required tools: [git-lfs](https://git-lfs.com/) and [uv](https://docs.astral.sh/uv/getting-started/installation/).
 
-```bash
-DEB="pandoc-3.0-1-amd64.deb"
-curl -L https://github.com/jgm/pandoc/releases/download/3.0/$DEB -o $DEB
-sudo dpkg -i $DEB
-```
+1. Install the development environment:
 
-Restore R environment and install `tinytex`:
+   ```sh
+   git lfs install
+   uv sync --frozen
+   ```
 
-```R
-renv::restore()
-tinytex::install_tinytex()
-```
+1. Render CV files from YAML:
 
-To render `.Rmd` files (or use RStudio IDE):
+   ```sh
+   uv run rendercv render cv/mle.yaml
+   ```
 
-```R
-rmarkdown::render("/path/to/file.Rmd")
-```
+   Set the `--watch` option to automatically re-run when in the input file is updated.
+
+   ```sh
+   uv run rendercv render cv/mle.yaml --watch
+   ```
