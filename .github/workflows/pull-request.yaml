@@ -18,4 +18,4 @@ jobs:
       - name: Render CV
         uses: ./.github/actions/test-and-render
         with:
-          file: cv/mle.Rmd
+          file: cv/mle.yaml
