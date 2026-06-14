@@ -4,7 +4,6 @@ Programmatically generated *curriculum vitae* using [RenderCV](https://docs.rend
 
 - [Machine Learning Engineer](./cv/mle.pdf)
 
-
 ## Development
 
 1. Install required tools: [git-lfs](https://git-lfs.com/) and [uv](https://docs.astral.sh/uv/getting-started/installation/).
@@ -14,6 +13,7 @@ Programmatically generated *curriculum vitae* using [RenderCV](https://docs.rend
    ```sh
    git lfs install
    uv sync --frozen
+   uv run pre-commit install
    ```
 
 1. Render CV files from YAML:
