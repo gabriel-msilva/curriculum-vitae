@@ -1,0 +1,23 @@
+name: test-and-render
+description: Run pre-commit hooks and render CV
+
+inputs:
+  file:
+    description: Path to RenderCV's input file
+    required: true
+
+runs:
+  using: composite
+  steps:
+    - name: Install uv
+      uses: astral-sh/setup-uv@v7
+      with:
+        version: "0.11.21"
+
+    - name: Run pre-commit hooks
+      run: uv run pre-commit run --show-diff-on-failure --color=always --all-files
+      shell: bash
+
+    - name: Render
+      run: uv run --no-dev rendercv render "${{ inputs.file }}"
+      shell: bash

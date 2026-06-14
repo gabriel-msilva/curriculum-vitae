@@ -17,12 +17,12 @@ jobs:
         with:
           lfs: true
 
-      - name: Render Rmarkdown
-        uses: ./.github/actions/render-rmarkdown
+      - name: Test and Render
+        uses: ./.github/actions/test-and-render
         with:
           file: cv/mle.Rmd
 
       - name: Commit and push PDF file
         uses: ./.github/actions/git-commit-push
         with:
-          files: cv/mle.pdf
+          files: cv/mle.typ cv/mle.pdf
