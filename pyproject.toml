@@ -5,3 +5,6 @@ description = "Programmatically generated CV"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["rendercv[full]>=2.3"]
+
+[dependency-groups]
+dev = ["pre-commit>=4.6.0"]
