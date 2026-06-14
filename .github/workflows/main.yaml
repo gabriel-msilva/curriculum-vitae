@@ -20,7 +20,7 @@ jobs:
       - name: Test and Render
         uses: ./.github/actions/test-and-render
         with:
-          file: cv/mle.Rmd
+          file: cv/mle.yaml
 
       - name: Commit and push PDF file
         uses: ./.github/actions/git-commit-push
