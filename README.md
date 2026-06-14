@@ -11,19 +11,13 @@ Programmatically generated *curriculum vitae* using [RenderCV](https://docs.rend
 1. Install the development environment:
 
    ```sh
-   git lfs install
-   uv sync --frozen
-   uv run pre-commit install
+   make setup
    ```
 
 1. Render CV files from YAML:
 
    ```sh
-   uv run rendercv render cv/mle.yaml
+   make render
    ```
 
-   Set the `--watch` option to automatically re-run when in the input file is updated.
-
-   ```sh
-   uv run rendercv render cv/mle.yaml --watch
-   ```
+   Files are automatically re-run when in the input file is updated.
